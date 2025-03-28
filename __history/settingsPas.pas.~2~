@@ -1,0 +1,77 @@
+unit settingsPas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm6 = class(TForm)
+    Label1: TLabel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Label2: TLabel;
+    Label8: TLabel;
+    Label3: TLabel;
+    Label7: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label4: TLabel;
+    Panel3: TPanel;
+    procedure FormCreate(Sender: TObject);
+    procedure Label9Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure swapSettingPanel(obj: Tpanel);
+  end;
+
+var
+  Form6: TForm6;
+  AllMenuButtonPanels: array of Tpanel;
+
+implementation
+
+{$R *.dfm}
+
+uses MainMenuFile, proced;
+
+procedure TForm6.FormCreate(Sender: TObject);
+begin
+  Form6.Constraints.MaxWidth := 640;
+  Form6.Constraints.MaxHeight := 460;
+  Form6.Constraints.MinWidth := 640;
+  Form6.Constraints.MinHeight := 460;
+  Self.DoubleBuffered := True;
+
+
+  AllMenuButtonPanels := [];
+  panel2.Left := 165;
+  panel2.Top := 0;
+  label2.BringToFront;
+  label3.BringToFront;
+  label7.BringToFront;
+  label8.BringToFront;
+
+  form6.Width := 541;
+  form6.Top := 509;
+//  Form6.Constraints.MinWidth := 541;
+//  Form6.Constraints.MaxWidth := 509;
+//  Form6.Constraints.MinHeight := 541;
+//  Form6.Constraints.MaxHeight := 509;
+end;
+
+procedure TForm6.Label9Click(Sender: TObject);
+begin
+swichWindow(form2)
+end;
+
+procedure Tform6.swapSettingPanel(obj: Tpanel);
+begin
+  panel3.Top := (obj.Top + (obj.Height div 2)) - (panel3.Height div 2);
+
+end;
+
+end.

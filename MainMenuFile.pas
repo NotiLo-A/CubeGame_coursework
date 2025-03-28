@@ -8,7 +8,7 @@ uses
   Vcl.Imaging.pngimage,Vcl.Imaging.GIFImg,Winapi.ShellAPI,System.SyncObjs,
   Vcl.Imaging.jpeg,System.IniFiles,System.Threading,VCL.Styles,Vcl.ComCtrls,
 
-  AtifkaLab,level2,proced,NPC;
+  AtifkaLab,level2,proced,NPC,settingsPas;
 type
   TForm2 = class(TForm)
     Panel2: TPanel;
@@ -58,6 +58,8 @@ type
     procedure Label7Click(Sender: TObject);
     procedure Label6Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Label5Click(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
   private
 
   public
@@ -93,16 +95,22 @@ procedure TForm2.FormCreate(Sender: TObject);
 begin
 Application.MainFormOnTaskbar := True;
 
-Form2.Constraints.MaxWidth := 640;
+  Form2.Constraints.MaxWidth := 640;
   Form2.Constraints.MaxHeight := 480;
   Form2.Constraints.MinWidth := 640;
   Form2.Constraints.MinHeight := 480;
- Self.DoubleBuffered := True;
+  Self.DoubleBuffered := True;
  panel2.Left:=-120;
 
   label14.Caption := FormatDateTime('dd.mm.yyyy, hh:nn', Now) + '   v0.67.3 alpha';
   label14.Left := self.Width - (label14.Width + 30);
 
+
+end;
+
+procedure TForm2.Label2Click(Sender: TObject);
+begin
+swichWindow(form1)
 end;
 
 procedure TForm2.Label3Click(Sender: TObject);
@@ -132,6 +140,11 @@ end;
 procedure TForm2.Label4MouseLeave(Sender: TObject);
 begin
 label4.Font.Color:=TColor($000000);
+end;
+
+procedure TForm2.Label5Click(Sender: TObject);
+begin
+swichWindow(form6)
 end;
 
 procedure TForm2.Label5MouseEnter(Sender: TObject);

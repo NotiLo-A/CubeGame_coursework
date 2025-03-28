@@ -184,8 +184,9 @@ object Form2: TForm2
       object Label2: TLabel
         Left = 38
         Top = 29
-        Width = 80
+        Width = 142
         Height = 16
+        AutoSize = False
         Caption = #1055#1088#1086#1076#1086#1083#1078#1080#1090#1100
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
@@ -194,12 +195,14 @@ object Form2: TForm2
         Font.Name = 'Fixedsys'
         Font.Style = []
         ParentFont = False
+        OnClick = Label2Click
       end
       object Label3: TLabel
         Left = 37
         Top = 68
-        Width = 80
+        Width = 143
         Height = 16
+        AutoSize = False
         Caption = #1053#1086#1074#1072#1103' '#1080#1075#1088#1072
         Color = clBtnFace
         Font.Charset = DEFAULT_CHARSET
@@ -217,8 +220,9 @@ object Form2: TForm2
       object Label4: TLabel
         Left = 24
         Top = 111
-        Width = 120
+        Width = 154
         Height = 16
+        AutoSize = False
         Caption = #1042#1099#1073#1088#1072#1090#1100' '#1091#1088#1086#1074#1077#1085#1100
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -238,9 +242,10 @@ object Form2: TForm2
       TabOrder = 2
       object Label5: TLabel
         Left = 39
-        Top = 9
-        Width = 72
+        Top = 8
+        Width = 139
         Height = 16
+        AutoSize = False
         Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -248,14 +253,16 @@ object Form2: TForm2
         Font.Name = 'Fixedsys'
         Font.Style = []
         ParentFont = False
+        OnClick = Label5Click
         OnMouseEnter = Label5MouseEnter
         OnMouseLeave = Label5MouseLeave
       end
       object Label6: TLabel
         Left = 39
         Top = 44
-        Width = 80
+        Width = 139
         Height = 16
+        AutoSize = False
         Caption = #1044#1086#1089#1090#1080#1078#1077#1085#1080#1103
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -270,8 +277,9 @@ object Form2: TForm2
       object Label7: TLabel
         Left = 42
         Top = 81
-        Width = 40
+        Width = 134
         Height = 16
+        AutoSize = False
         Caption = #1058#1080#1090#1088#1099
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -293,8 +301,9 @@ object Form2: TForm2
       object Label8: TLabel
         Left = 23
         Top = 42
-        Width = 40
+        Width = 156
         Height = 16
+        AutoSize = False
         Caption = #1042#1099#1081#1090#1080
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -309,8 +318,9 @@ object Form2: TForm2
       object Label9: TLabel
         Left = 20
         Top = 13
-        Width = 104
+        Width = 157
         Height = 16
+        AutoSize = False
         Caption = #1055#1077#1088#1077#1079#1072#1087#1091#1089#1090#1080#1090#1100
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
