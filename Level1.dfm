@@ -75,6 +75,7 @@ object Form1: TForm1
     020000001200E0000200C0001200C2200200C0000000E0000200F8007E00}
   KeyPreview = True
   Position = poDesigned
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
@@ -4471,8 +4472,8 @@ object Form1: TForm1
     Visible = False
   end
   object GroupBox1: TGroupBox
-    Left = 364
-    Top = 64
+    Left = 261
+    Top = 35
     Width = 196
     Height = 257
     Color = clSilver
@@ -4497,6 +4498,7 @@ object Form1: TForm1
       Height = 37
       Caption = #1042#1099#1093#1086#1076
       TabOrder = 1
+      TabStop = False
       OnClick = Button2Click
     end
     object Button3: TButton
@@ -4526,6 +4528,7 @@ object Form1: TForm1
       Height = 18
       Caption = #8634
       TabOrder = 4
+      TabStop = False
       OnClick = Button8Click
     end
   end

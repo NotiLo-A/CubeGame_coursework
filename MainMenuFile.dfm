@@ -155,6 +155,7 @@ object Form2: TForm2
         Caption = #1074#1099#1081#1090#1080' '#1080#1079' '#1072#1082#1082#1072#1091#1085#1090#1072
         TabOrder = 1
         TabStop = False
+        OnClick = Button1Click
       end
       object Panel4: TPanel
         Left = 133
@@ -196,10 +197,12 @@ object Form2: TForm2
         Font.Style = []
         ParentFont = False
         OnClick = Label2Click
+        OnMouseEnter = Label2MouseEnter
+        OnMouseLeave = Label2MouseLeave
       end
       object Label3: TLabel
         Left = 37
-        Top = 68
+        Top = 75
         Width = 143
         Height = 16
         AutoSize = False
@@ -218,18 +221,19 @@ object Form2: TForm2
         OnMouseLeave = Label3MouseLeave
       end
       object Label4: TLabel
-        Left = 24
-        Top = 111
-        Width = 154
-        Height = 16
+        Left = 39
+        Top = 120
+        Width = 135
+        Height = 17
         AutoSize = False
-        Caption = #1042#1099#1073#1088#1072#1090#1100' '#1091#1088#1086#1074#1077#1085#1100
+        Caption = #1059#1088#1086#1074#1085#1080
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Fixedsys'
         Font.Style = []
         ParentFont = False
+        OnClick = Label4Click
         OnMouseEnter = Label4MouseEnter
         OnMouseLeave = Label4MouseLeave
       end
@@ -299,7 +303,7 @@ object Form2: TForm2
       Height = 76
       TabOrder = 3
       object Label8: TLabel
-        Left = 23
+        Left = 21
         Top = 42
         Width = 156
         Height = 16

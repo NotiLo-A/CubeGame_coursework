@@ -89,11 +89,16 @@ procedure DialogDoors(
 
    procedure atifka(form: Tform; mainText: string; postText:string; colorTab: Tcolor; Znak: string);
 
+   procedure ExitingTheProgram(form2: Tform);
+
+   procedure NewGameButtonMenu(prodoButton: Tlabel; form1: Tform);
 
  var DynamicArrayS: TArray<string>;
  var DynamicArraySs: TArray<string>;
  var DunamicArrayColorTab: TArray<Tcolor>;
  var DunamicArrayZnak: TArray<string>;
+ var TakeMeBackForSettings: Tform;
+ var TakeMeBackForAtifka: Tform;
 
 // var DynamicArraySCount: integer = 0;
  var canAtifka: boolean = true;
@@ -450,9 +455,17 @@ procedure ResetGame; //---------------------- RESET
   begin
     AppPath := ParamStr(0); // Путь к текущему исполняемому файлу
     ShellExecute(0, 'open', PChar(AppPath), nil, nil, SW_SHOWNORMAL); // Перезапуск
+    sleep(1000);
     Application.Terminate; // Завершение текущего экземпляра
   end;
 
+
+procedure NewGameButtonMenu(prodoButton: Tlabel; form1: Tform);
+begin
+   ResetGame;
+  prodoButton.Enabled:= true;
+  swichWindow(form1);
+end;
 
 function Contains(const Arr: TArray<string>; const Value: string): Boolean;
 var
@@ -591,6 +604,10 @@ begin
 end;
 end;
 
-
+procedure ExitingTheProgram(form2: Tform);
+begin
+{ The processes of saving progress should have been described here... but... I'm too lazy :3}
+form2.Close;
+end;
 
 end.

@@ -76,13 +76,6 @@ object Form2: TForm2
   Position = poDesigned
   OnCreate = FormCreate
   TextHeight = 15
-  object Label13: TLabel
-    Left = 432
-    Top = 113
-    Width = 40
-    Height = 15
-    Caption = 'Label13'
-  end
   object Label14: TLabel
     Left = 414
     Top = 422
@@ -155,6 +148,7 @@ object Form2: TForm2
         Caption = #1074#1099#1081#1090#1080' '#1080#1079' '#1072#1082#1082#1072#1091#1085#1090#1072
         TabOrder = 1
         TabStop = False
+        OnClick = Button1Click
       end
       object Panel4: TPanel
         Left = 133
@@ -201,7 +195,7 @@ object Form2: TForm2
       end
       object Label3: TLabel
         Left = 37
-        Top = 68
+        Top = 75
         Width = 143
         Height = 16
         AutoSize = False
@@ -220,18 +214,19 @@ object Form2: TForm2
         OnMouseLeave = Label3MouseLeave
       end
       object Label4: TLabel
-        Left = 24
-        Top = 111
-        Width = 154
-        Height = 16
+        Left = 39
+        Top = 120
+        Width = 135
+        Height = 17
         AutoSize = False
-        Caption = #1042#1099#1073#1088#1072#1090#1100' '#1091#1088#1086#1074#1077#1085#1100
+        Caption = #1059#1088#1086#1074#1085#1080
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Fixedsys'
         Font.Style = []
         ParentFont = False
+        OnClick = Label4Click
         OnMouseEnter = Label4MouseEnter
         OnMouseLeave = Label4MouseLeave
       end
@@ -301,7 +296,7 @@ object Form2: TForm2
       Height = 76
       TabOrder = 3
       object Label8: TLabel
-        Left = 23
+        Left = 21
         Top = 42
         Width = 156
         Height = 16
@@ -336,14 +331,29 @@ object Form2: TForm2
       end
     end
   end
-  object Button2: TButton
-    Left = 297
-    Top = 101
-    Width = 75
-    Height = 25
-    Caption = 'Button2'
+  object Panel8: TPanel
+    Left = 347
+    Top = 39
+    Width = 185
+    Height = 105
+    Caption = 'DEBUG'
     TabOrder = 1
-    OnClick = Button2Click
+    object Label13: TLabel
+      Left = 29
+      Top = 75
+      Width = 40
+      Height = 15
+      Caption = 'Label13'
+    end
+    object Button2: TButton
+      Left = 26
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Button2'
+      TabOrder = 0
+      OnClick = Button2Click
+    end
   end
   object Timer1: TTimer
     Interval = 1

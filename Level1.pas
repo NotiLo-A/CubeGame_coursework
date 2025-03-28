@@ -7,7 +7,7 @@ uses
   Vcl.Graphics,Vcl.Controls,Vcl.Forms,Vcl.Dialogs,Vcl.StdCtrls,Vcl.ExtCtrls,NPC,
   Vcl.Imaging.pngimage,Vcl.Imaging.GIFImg,Winapi.ShellAPI,proced,System.SyncObjs,
   Vcl.Imaging.jpeg,System.IniFiles,System.Threading,VCL.Styles,Vcl.ComCtrls,MainMenuFile,
-  MovementSystem;
+  MovementSystem, settingsPas;
 
 type
   TForm1 = class(TForm)
@@ -179,6 +179,7 @@ type
     procedure Panel42Click(Sender: TObject);
     procedure Button22Click(Sender: TObject);
     procedure Label4Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 //    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 
   private
@@ -420,6 +421,11 @@ end;
 //self.Close;
 //canclose:=true;
 //end;
+
+procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+ExitingTheProgram(form2)
+end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
@@ -818,13 +824,15 @@ end;
 
 procedure TForm1.Button2Click(Sender: TObject);//---------------exit
 begin
-//  Form2.Close;
+  Form2.Close;
 //  form1.Close;
-  Close;
+  //Close;
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
+  TakeMeBackForSettings := form1;
+  swichWindow(form6);
   ActiveControl:=nil;
 end;
 

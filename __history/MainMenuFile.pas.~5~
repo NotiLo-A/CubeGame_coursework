@@ -1,0 +1,284 @@
+unit MainMenuFile;
+
+interface
+
+uses
+  Winapi.Windows,Winapi.Messages,System.SysUtils,System.Variants,System.Classes,
+  Vcl.Graphics,Vcl.Controls,Vcl.Forms,Vcl.Dialogs,Vcl.StdCtrls,Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage,Vcl.Imaging.GIFImg,Winapi.ShellAPI,System.SyncObjs,
+  Vcl.Imaging.jpeg,System.IniFiles,System.Threading,VCL.Styles,Vcl.ComCtrls,
+
+  AtifkaLab,level2,proced,NPC,settingsPas;
+type
+  TForm2 = class(TForm)
+    Panel2: TPanel;
+    Timer1: TTimer;
+    Panel3: TPanel;
+    Timer2: TTimer;
+    Label1: TLabel;
+    Panel1: TPanel;
+    image1: TImage;
+    Button1: TButton;
+    Panel4: TPanel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Panel5: TPanel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Button2: TButton;
+    Label13: TLabel;
+    Label14: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+//    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure Label3Click(Sender: TObject);
+    procedure Timer2Timer(Sender: TObject);
+    procedure Label8Click(Sender: TObject);
+    procedure Label9Click(Sender: TObject);
+    procedure Label3MouseEnter(Sender: TObject);
+    procedure Label4MouseEnter(Sender: TObject);
+    procedure Label5MouseEnter(Sender: TObject);
+    procedure Label6MouseEnter(Sender: TObject);
+    procedure Label7MouseEnter(Sender: TObject);
+    procedure Label9MouseEnter(Sender: TObject);
+    procedure Label8MouseEnter(Sender: TObject);
+    procedure Label3MouseLeave(Sender: TObject);
+    procedure Label4MouseLeave(Sender: TObject);
+    procedure Label5MouseLeave(Sender: TObject);
+    procedure Label6MouseLeave(Sender: TObject);
+    procedure Label7MouseLeave(Sender: TObject);
+    procedure Label9MouseLeave(Sender: TObject);
+    procedure Label8MouseLeave(Sender: TObject);
+    procedure Label7Click(Sender: TObject);
+    procedure Label6Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Label5Click(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
+    procedure Label2MouseEnter(Sender: TObject);
+    procedure Label2MouseLeave(Sender: TObject);
+  private
+
+  public
+    { Public declarations }
+    procedure openPanel(flag:boolean);
+  end;
+
+var
+  Form2: TForm2;
+
+  FTargetWidth: Integer; // Целевая ширина панели
+  FStep: Integer = 20;        // Шаг изменения ширины
+
+
+
+
+
+implementation
+uses
+{$MINSTACKSIZE 4194304} // Минимальный размер стека 4 МБ
+{$MAXSTACKSIZE 4194304} // Максимальный размер стека 4 МБ
+Level1,titriEND;
+
+
+{$R *.dfm}
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+swichWindow(form4)
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+Application.MainFormOnTaskbar := True;
+
+  Form2.Constraints.MaxWidth := 640;
+  Form2.Constraints.MaxHeight := 480;
+  Form2.Constraints.MinWidth := 640;
+  Form2.Constraints.MinHeight := 480;
+  Self.DoubleBuffered := True;
+ panel2.Left:=-120;
+
+  label14.Caption := FormatDateTime('dd.mm.yyyy, hh:nn', Now) + '   v0.67.3 alpha';
+  label14.Left := self.Width - (label14.Width + 30);
+
+
+end;
+
+procedure TForm2.Label2Click(Sender: TObject);
+begin
+swichWindow(form1)
+end;
+
+procedure TForm2.Label2MouseEnter(Sender: TObject);
+begin
+label2.Font.Color := clyellow;
+end;
+  //
+procedure TForm2.Label2MouseLeave(Sender: TObject);
+begin
+label2.Font.Color := TColor($000000);
+end;
+
+procedure TForm2.Label3Click(Sender: TObject);
+begin
+label2.Enabled:= true;
+swichWindow(form1)
+end;
+
+
+
+procedure TForm2.Label3MouseEnter(Sender: TObject);
+begin
+label3.Font.Color := clyellow;
+end;
+
+procedure TForm2.Label3MouseLeave(Sender: TObject);
+begin
+label3.Font.Color := TColor($000000);
+end;
+
+
+procedure TForm2.Label4MouseEnter(Sender: TObject);
+begin
+label4.Font.Color:= clyellow;
+end;
+
+procedure TForm2.Label4MouseLeave(Sender: TObject);
+begin
+label4.Font.Color:=TColor($000000);
+end;
+
+procedure TForm2.Label5Click(Sender: TObject);
+begin
+swichWindow(form6)
+end;
+
+procedure TForm2.Label5MouseEnter(Sender: TObject);
+begin
+label5.Font.Color:= clyellow;
+end;
+
+procedure TForm2.Label5MouseLeave(Sender: TObject);
+begin
+label5.Font.Color:=TColor($000000);
+end;
+
+procedure TForm2.Label6Click(Sender: TObject);
+begin
+swichWindow(form5);
+//atifka(form2,'Привет','Первый раз зайти в игру');
+end;
+
+procedure TForm2.Label6MouseEnter(Sender: TObject);
+begin
+label6.Font.Color:= clyellow;
+end;
+
+procedure TForm2.Label6MouseLeave(Sender: TObject);
+begin
+label6.Font.Color:=TColor($000000);
+end;
+
+procedure TForm2.Label7Click(Sender: TObject);
+begin
+swichWindow(form3)
+end;
+
+procedure TForm2.Label7MouseEnter(Sender: TObject);
+begin
+label7.Font.Color:= clyellow;
+end;
+
+procedure TForm2.Label7MouseLeave(Sender: TObject);
+begin
+label7.Font.Color:=TColor($000000);
+end;
+
+procedure TForm2.Label8Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TForm2.Label8MouseEnter(Sender: TObject);
+begin
+label8.Font.Color:= clyellow;
+end;
+
+procedure TForm2.Label8MouseLeave(Sender: TObject);
+begin
+label8.Font.Color:=TColor($000000);
+end;
+
+procedure TForm2.Label9Click(Sender: TObject);
+begin
+ActiveControl:=nil;
+ResetGame;
+end;
+
+procedure TForm2.Label9MouseEnter(Sender: TObject);
+begin
+label9.Font.Color:= clyellow;
+end;
+
+procedure TForm2.Label9MouseLeave(Sender: TObject);
+begin
+label9.Font.Color:=TColor($000000);
+end;
+
+//procedure TForm2.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+//begin
+//self.Close;
+//canclose:=true;
+//end;
+
+
+
+
+procedure Tform2.openPanel(flag:boolean);
+begin
+if flag then
+ FTargetWidth := 0
+else
+ FTargetWidth := -120;
+
+Timer1.Enabled := True;
+end;
+
+procedure TForm2.Timer1Timer(Sender: TObject);
+begin
+  if Panel2.left < FTargetWidth then
+    Panel2.left := Panel2.left + FStep
+  else if Panel2.left > FTargetWidth then
+    Panel2.left := Panel2.left - FStep;
+
+  // Если достигли целевой ширины, выключаем таймер
+  if Panel2.left = FTargetWidth then
+    Timer1.Enabled := False;
+
+
+  if label1.Caption <> 'Undefaind' then
+  button1.Caption := 'выйти из аккаунта'
+  else
+  button1.Caption := 'войти в аккаунт';
+
+  //label10.Caption := inttostr(form2.ClientHeight) + '' + inttostr(form2.ClientWidth);
+
+  if Length(DynamicArrayS) > 0 then
+  Label13.Caption := string.Join(', ', DynamicArrayS)
+else
+  Label13.Caption := 'Массив пуст';
+end;
+
+procedure TForm2.Timer2Timer(Sender: TObject);
+begin
+if ScreenToClient(Mouse.CursorPos).X > 180 then openpanel(false);
+if ScreenToClient(Mouse.CursorPos).X < 60 then openpanel(true);
+end;
+
+end.

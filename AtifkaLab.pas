@@ -106,7 +106,7 @@ uses MainMenuFile,proced;
 
 procedure TForm5.Button1Click(Sender: TObject);
 begin
-swichWindow(form2)
+swichWindow(TakeMeBackForAtifka)
 end;
 
 procedure TForm5.FormCreate(Sender: TObject);

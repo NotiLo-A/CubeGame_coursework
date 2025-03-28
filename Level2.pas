@@ -24,6 +24,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     { Private declarations }
   public
@@ -40,6 +41,13 @@ var
 implementation
 
 {$R *.dfm}
+
+uses MainMenuFile;
+
+procedure TForm4.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+ExitingTheProgram(form2);
+end;
 
 procedure TForm4.FormCreate(Sender: TObject);
 begin

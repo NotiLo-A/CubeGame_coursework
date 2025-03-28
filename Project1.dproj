@@ -150,6 +150,10 @@
             <Form>Form6</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="SwichLevels.pas">
+            <Form>Form7</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <RcItem Include="..\..\..\Pictures\imgeOwo.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>PngImage_1</ResourceId>
@@ -186,13 +190,13 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
-                <DeployFile LocalName="..\..\..\..\Pictures\Pixel Studio\Selection.png" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName="..\..\..\Pictures\Pixel Studio\Selection.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win64">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\Pictures\imgeOwo.png" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName="..\..\..\Pictures\imgeOwo.png" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win64">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>

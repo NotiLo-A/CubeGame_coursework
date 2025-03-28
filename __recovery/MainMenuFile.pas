@@ -8,7 +8,7 @@ uses
   Vcl.Imaging.pngimage,Vcl.Imaging.GIFImg,Winapi.ShellAPI,System.SyncObjs,
   Vcl.Imaging.jpeg,System.IniFiles,System.Threading,VCL.Styles,Vcl.ComCtrls,
 
-  AtifkaLab,level2,proced,NPC,settingsPas;
+  AtifkaLab,level2,proced,NPC,settingsPas,SwichLevels;
 type
   TForm2 = class(TForm)
     Panel2: TPanel;
@@ -32,8 +32,9 @@ type
     Panel6: TPanel;
     Panel7: TPanel;
     Button2: TButton;
-    Label13: TLabel;
     Label14: TLabel;
+    Label13: TLabel;
+    Panel8: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
 //    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -62,6 +63,8 @@ type
     procedure Label2Click(Sender: TObject);
     procedure Label2MouseEnter(Sender: TObject);
     procedure Label2MouseLeave(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Label4Click(Sender: TObject);
   private
 
   public
@@ -87,6 +90,11 @@ Level1,titriEND;
 
 
 {$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+ActiveControl:=nil;
+end;
 
 procedure TForm2.Button2Click(Sender: TObject);
 begin
@@ -119,7 +127,7 @@ procedure TForm2.Label2MouseEnter(Sender: TObject);
 begin
 label2.Font.Color := clyellow;
 end;
-
+  //
 procedure TForm2.Label2MouseLeave(Sender: TObject);
 begin
 label2.Font.Color := TColor($000000);
@@ -127,8 +135,18 @@ end;
 
 procedure TForm2.Label3Click(Sender: TObject);
 begin
-label2.Enabled:= true;
-swichWindow(form1)
+  label2.Enabled:= true;
+  // Закрываем Form2, если она открыта
+  //if Assigned(Form1) then
+    //Form1.Close;
+
+  // Освобождаем память, если форма была создана
+  FreeAndNil(Form1);
+
+  // Создаем новую инстанцию Form2
+  Application.CreateForm(TForm1, Form1);
+
+  swichWindow(form1);
 end;
 
 
@@ -144,6 +162,11 @@ label3.Font.Color := TColor($000000);
 end;
 
 
+procedure TForm2.Label4Click(Sender: TObject);
+begin
+swichWindow(form7)
+end;
+
 procedure TForm2.Label4MouseEnter(Sender: TObject);
 begin
 label4.Font.Color:= clyellow;
@@ -156,6 +179,7 @@ end;
 
 procedure TForm2.Label5Click(Sender: TObject);
 begin
+TakeMeBackForSettings := form2;
 swichWindow(form6)
 end;
 
@@ -171,6 +195,7 @@ end;
 
 procedure TForm2.Label6Click(Sender: TObject);
 begin
+TakeMeBackForAtifka := form2;
 swichWindow(form5);
 //atifka(form2,'Привет','Первый раз зайти в игру');
 end;

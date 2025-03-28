@@ -14,7 +14,8 @@ uses
   MovementSystem in 'MovementSystem.pas',
   Level2 in 'Level2.pas' {Form4},
   AtifkaLab in 'AtifkaLab.pas' {Form5},
-  settingsPas in 'settingsPas.pas' {Form6};
+  settingsPas in 'settingsPas.pas' {Form6},
+  SwichLevels in 'SwichLevels.pas' {Form7};
 
 {$R *.res}
 
@@ -27,5 +28,6 @@ begin
   Application.CreateForm(TForm4, Form4);
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
+  Application.CreateForm(TForm7, Form7);
   Application.Run;
 end.

@@ -44,6 +44,8 @@ type
     procedure Label3Click(Sender: TObject);
     procedure Label7Click(Sender: TObject);
     procedure Panel5Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure Label10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,6 +64,11 @@ implementation
 {$R *.dfm}
 
 uses MainMenuFile, proced, AtifkaLab;
+
+procedure TForm6.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+ExitingTheProgram(form2)
+end;
 
 procedure TForm6.FormCreate(Sender: TObject);
 begin
@@ -97,6 +104,11 @@ begin
 //  label6.Top := (label2.Top + (label2.Height div 2)) - (label6.Height div 2) + 1;
 end;
 
+procedure TForm6.Label10Click(Sender: TObject);
+begin
+ExitingTheProgram(form2);
+end;
+
 procedure TForm6.Label2Click(Sender: TObject);
 begin
 swapSettingPanel(label2, panel2);
@@ -110,6 +122,7 @@ end;
 
 procedure TForm6.Label7Click(Sender: TObject);
 begin
+  TakeMeBackForAtifka := form6;
   swichWindow(form5)
 end;
 
@@ -120,7 +133,7 @@ end;
 
 procedure TForm6.Label9Click(Sender: TObject);
 begin
-swichWindow(form2)
+swichWindow(TakeMeBackForSettings)
 end;
 
 procedure TForm6.Panel5Click(Sender: TObject);
