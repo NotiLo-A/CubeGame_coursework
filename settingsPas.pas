@@ -27,8 +27,6 @@ type
     Label14: TLabel;
     TrackBar1: TTrackBar;
     Label15: TLabel;
-    TrackBar2: TTrackBar;
-    TrackBar3: TTrackBar;
     Label16: TLabel;
     Label17: TLabel;
     Panel4: TPanel;
@@ -37,6 +35,8 @@ type
     Image1: TImage;
     Panel6: TPanel;
     Memo1: TMemo;
+    TrackBar2: TTrackBar;
+    TrackBar3: TTrackBar;
     procedure FormCreate(Sender: TObject);
     procedure Label9Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
@@ -138,7 +138,7 @@ end;
 
 procedure TForm6.Panel5Click(Sender: TObject);
 begin
- // Screen.Cursor := LoadCursorFromFile('cursors/normal.cur');
+  Screen.Cursor := LoadCursorFromFile('cursors/normal.cur');
 end;
 
 procedure Tform6.swapSettingPanel(obj: Tlabel; pan: Tpanel);

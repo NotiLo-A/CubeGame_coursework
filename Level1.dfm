@@ -4472,8 +4472,8 @@ object Form1: TForm1
     Visible = False
   end
   object GroupBox1: TGroupBox
-    Left = 261
-    Top = 35
+    Left = 367
+    Top = 93
     Width = 196
     Height = 257
     Color = clSilver
@@ -4492,8 +4492,8 @@ object Form1: TForm1
       OnClick = Button1Click
     end
     object Button2: TButton
-      Left = 47
-      Top = 189
+      Left = 48
+      Top = 176
       Width = 97
       Height = 37
       Caption = #1042#1099#1093#1086#1076
@@ -4511,179 +4511,25 @@ object Form1: TForm1
       TabStop = False
       OnClick = Button3Click
     end
-    object Button4: TButton
-      Left = 47
-      Top = 131
-      Width = 98
-      Height = 38
-      Caption = 'Debug [off]'
-      TabOrder = 3
-      TabStop = False
-      OnClick = Button4Click
-    end
     object Button8: TButton
       Left = 6
       Top = 233
       Width = 20
       Height = 18
       Caption = #8634
-      TabOrder = 4
+      TabOrder = 3
       TabStop = False
       OnClick = Button8Click
     end
-  end
-  object Panel36: TPanel
-    Left = 39
-    Top = 9
-    Width = 137
-    Height = 227
-    Color = clWhite
-    ParentBackground = False
-    TabOrder = 6
-    Visible = False
-    object Label1: TLabel
-      Left = 0
-      Top = 8
-      Width = 46
-      Height = 17
-      Caption = 'Speed 1'
-    end
-    object Label2: TLabel
-      Left = 85
-      Top = 8
-      Width = 5
-      Height = 17
-      Caption = '1'
-    end
-    object Label3: TLabel
-      Left = 119
-      Top = 8
-      Width = 7
-      Height = 17
-      Caption = '2'
-    end
-    object Label4: TLabel
-      Left = 3
-      Top = 95
-      Width = 36
-      Height = 60
-      Caption = 'A      = '#13#10'W     = '#13#10'S       = '#13#10'D      = '#13#10'Shift = '
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -10
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      ParentShowHint = False
-      ShowHint = False
-      OnClick = Label4Click
-    end
-    object Label7: TLabel
-      Left = 5
-      Top = 172
-      Width = 49
-      Height = 12
-      Caption = 'npc spawn'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -10
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      ParentShowHint = False
-      ShowHint = False
-    end
-    object Label8: TLabel
-      Left = 10
-      Top = 197
-      Width = 42
-      Height = 21
-      Caption = 'Swich'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      ParentShowHint = False
-      ShowHint = False
-    end
-    object UpDown1: TUpDown
-      Left = 64
-      Top = 8
-      Width = 17
-      Height = 17
-      TabOrder = 0
-      OnClick = UpDown1Click
-    end
-    object UpDown2: TUpDown
-      Left = 96
-      Top = 8
-      Width = 17
-      Height = 17
-      TabOrder = 1
-      OnClick = UpDown2Click
-    end
-    object Button5: TButton
-      Left = 0
-      Top = 31
-      Width = 126
-      Height = 18
-      Caption = 'Show Collisions [off]'
-      TabOrder = 2
-      TabStop = False
-      OnClick = Button5Click
-    end
-    object Button6: TButton
-      Left = 87
-      Top = 138
-      Width = 42
-      Height = 18
-      Caption = 'Reset'
-      TabOrder = 3
-      TabStop = False
-      OnClick = Button22Click
-    end
-    object Button7: TButton
-      Left = 0
-      Top = 53
-      Width = 124
-      Height = 18
-      Caption = 'Movement [on]'
+    object Button23: TButton
+      Left = 48
+      Top = 125
+      Width = 97
+      Height = 37
+      Caption = #1052#1077#1085#1102
       TabOrder = 4
       TabStop = False
-      OnClick = Button7Click
-    end
-    object Button9: TButton
-      Left = 0
-      Top = 75
-      Width = 125
-      Height = 16
-      Caption = 'Collision [off]'
-      TabOrder = 5
-      TabStop = False
-      OnClick = Button9Click
-    end
-    object Panel42: TPanel
-      Left = 88
-      Top = 167
-      Width = 40
-      Height = 23
-      Caption = 'off'
-      Color = clSilver
-      ParentBackground = False
-      TabOrder = 6
-      OnClick = Panel42Click
-    end
-    object Button22: TButton
-      Left = 85
-      Top = 200
-      Width = 42
-      Height = 18
-      Caption = 'on 2'
-      TabOrder = 7
-      TabStop = False
-      OnClick = Button22Click
+      OnClick = Button23Click
     end
   end
   object Panel6: TPanel
@@ -4691,7 +4537,7 @@ object Form1: TForm1
     Top = -191
     Width = 10
     Height = 528
-    TabOrder = 7
+    TabOrder = 6
     Visible = False
   end
   object Panel7: TPanel
@@ -4699,7 +4545,7 @@ object Form1: TForm1
     Top = 75
     Width = 9
     Height = 260
-    TabOrder = 8
+    TabOrder = 7
     Visible = False
   end
   object Panel8: TPanel
@@ -4707,7 +4553,7 @@ object Form1: TForm1
     Top = 325
     Width = 296
     Height = 11
-    TabOrder = 9
+    TabOrder = 8
     Visible = False
   end
   object Panel9: TPanel
@@ -4715,7 +4561,7 @@ object Form1: TForm1
     Top = 371
     Width = 682
     Height = 11
-    TabOrder = 10
+    TabOrder = 9
     Visible = False
   end
   object Panel10: TPanel
@@ -4723,7 +4569,7 @@ object Form1: TForm1
     Top = 177
     Width = 208
     Height = 11
-    TabOrder = 11
+    TabOrder = 10
     Visible = False
   end
   object Panel11: TPanel
@@ -4731,7 +4577,7 @@ object Form1: TForm1
     Top = 177
     Width = 137
     Height = 11
-    TabOrder = 12
+    TabOrder = 11
     Visible = False
   end
   object Panel12: TPanel
@@ -4739,7 +4585,7 @@ object Form1: TForm1
     Top = 187
     Width = 9
     Height = 260
-    TabOrder = 13
+    TabOrder = 12
     Visible = False
   end
   object Panel13: TPanel
@@ -4747,7 +4593,7 @@ object Form1: TForm1
     Top = -29
     Width = 9
     Height = 206
-    TabOrder = 14
+    TabOrder = 13
     Visible = False
   end
   object Panel14: TPanel
@@ -4755,7 +4601,7 @@ object Form1: TForm1
     Top = -222
     Width = 9
     Height = 260
-    TabOrder = 15
+    TabOrder = 14
     Visible = False
   end
   object Panel15: TPanel
@@ -4763,7 +4609,7 @@ object Form1: TForm1
     Top = 28
     Width = 297
     Height = 11
-    TabOrder = 16
+    TabOrder = 15
     Visible = False
   end
   object Panel16: TPanel
@@ -4771,7 +4617,7 @@ object Form1: TForm1
     Top = -41
     Width = 287
     Height = 11
-    TabOrder = 17
+    TabOrder = 16
     Visible = False
   end
   object Panel17: TPanel
@@ -4779,7 +4625,7 @@ object Form1: TForm1
     Top = 378
     Width = 10
     Height = 528
-    TabOrder = 18
+    TabOrder = 17
     Visible = False
   end
   object DP1: TPanel
@@ -4789,7 +4635,7 @@ object Form1: TForm1
     Height = 1392
     Color = clRed
     ParentBackground = False
-    TabOrder = 19
+    TabOrder = 18
     Visible = False
   end
   object Panel18: TPanel
@@ -4799,7 +4645,7 @@ object Form1: TForm1
     Height = 222
     Color = 12369084
     ParentBackground = False
-    TabOrder = 20
+    TabOrder = 19
     object Button10: TButton
       Left = 8
       Top = 57
@@ -5022,7 +4868,7 @@ object Form1: TForm1
     Top = 413
     Width = 208
     Height = 53
-    TabOrder = 21
+    TabOrder = 20
     object ColorInv: TPanel
       Left = 19
       Top = 10
@@ -5092,7 +4938,7 @@ object Form1: TForm1
     Height = 40
     Color = 8453888
     ParentBackground = False
-    TabOrder = 22
+    TabOrder = 21
     Visible = False
   end
   object Panel23: TPanel
@@ -5102,7 +4948,7 @@ object Form1: TForm1
     Height = 22
     Color = clRed
     ParentBackground = False
-    TabOrder = 23
+    TabOrder = 22
   end
   object Panel24: TPanel
     Left = 449
@@ -5118,45 +4964,7 @@ object Form1: TForm1
     Font.Style = []
     ParentBackground = False
     ParentFont = False
-    TabOrder = 24
-  end
-  object Panel30: TPanel
-    Left = -10
-    Top = 348
-    Width = 232
-    Height = 105
-    TabOrder = 25
-    Visible = False
-    object Edit1: TEdit
-      Left = 10
-      Top = 13
-      Width = 211
-      Height = 25
-      AutoSelect = False
-      HideSelection = False
-      ReadOnly = True
-      TabOrder = 0
-    end
-    object Edit2: TEdit
-      Left = 11
-      Top = 44
-      Width = 211
-      Height = 25
-      AutoSelect = False
-      HideSelection = False
-      ReadOnly = True
-      TabOrder = 1
-    end
-    object Edit3: TEdit
-      Left = 11
-      Top = 74
-      Width = 211
-      Height = 25
-      AutoSelect = False
-      HideSelection = False
-      ReadOnly = True
-      TabOrder = 2
-    end
+    TabOrder = 23
   end
   object Panel31: TPanel
     Left = 179
@@ -5164,7 +4972,7 @@ object Form1: TForm1
     Width = 66
     Height = 35
     Caption = 'give ipone'
-    TabOrder = 26
+    TabOrder = 24
     Visible = False
   end
   object Panel32: TPanel
@@ -5173,7 +4981,7 @@ object Form1: TForm1
     Width = 75
     Height = 70
     Caption = 'give ipone'
-    TabOrder = 27
+    TabOrder = 25
     Visible = False
   end
   object Panel33: TPanel
@@ -5182,7 +4990,7 @@ object Form1: TForm1
     Width = 36
     Height = 35
     Caption = 'give ipone'
-    TabOrder = 28
+    TabOrder = 26
     Visible = False
   end
   object Panel34: TPanel
@@ -5191,7 +4999,7 @@ object Form1: TForm1
     Width = 36
     Height = 35
     Caption = 'give ipone'
-    TabOrder = 29
+    TabOrder = 27
     Visible = False
   end
   object Panel35: TPanel
@@ -5200,7 +5008,7 @@ object Form1: TForm1
     Width = 37
     Height = 39
     Caption = 'give ipone'
-    TabOrder = 30
+    TabOrder = 28
     Visible = False
   end
   object Panel37: TPanel
@@ -5209,18 +5017,18 @@ object Form1: TForm1
     Width = 36
     Height = 35
     Caption = 'give ipone'
-    TabOrder = 31
+    TabOrder = 29
     Visible = False
   end
   object Panel38: TPanel
-    Left = -190
-    Top = 163
+    Left = 10
+    Top = 245
     Width = 221
     Height = 157
     Cursor = crArrow
     Color = clWhite
     ParentBackground = False
-    TabOrder = 32
+    TabOrder = 30
     Visible = False
     object Image18: TImage
       Left = -58
@@ -5445,13 +5253,13 @@ object Form1: TForm1
     end
   end
   object Panel40: TPanel
-    Left = 331
-    Top = -278
+    Left = 340
+    Top = -262
     Width = 299
     Height = 346
     Color = clMedGray
     ParentBackground = False
-    TabOrder = 33
+    TabOrder = 31
     Visible = False
     object Label10: TLabel
       Left = 10
@@ -5553,18 +5361,17 @@ object Form1: TForm1
     Caption = 'trigger'
     Color = 16744576
     ParentBackground = False
-    TabOrder = 34
+    TabOrder = 32
     Visible = False
   end
   object Panel41: TPanel
-    Left = 17
-    Top = 75
+    Left = 5
+    Top = 66
     Width = 25
     Height = 25
     Caption = 'Panel41'
-    TabOrder = 35
+    TabOrder = 33
     Visible = False
-    OnClick = Panel41Click
   end
   object Timer1: TTimer
     Interval = 5
@@ -5574,7 +5381,6 @@ object Form1: TForm1
   end
   object Timer2: TTimer
     Interval = 1
-    OnTimer = Timer2Timer
     Left = 59
     Top = 275
   end

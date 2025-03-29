@@ -32,8 +32,9 @@ type
     Panel6: TPanel;
     Panel7: TPanel;
     Button2: TButton;
-    Label13: TLabel;
     Label14: TLabel;
+    Label13: TLabel;
+    Panel8: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
 //    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);

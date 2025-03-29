@@ -76,13 +76,6 @@ object Form2: TForm2
   Position = poDesigned
   OnCreate = FormCreate
   TextHeight = 15
-  object Label13: TLabel
-    Left = 432
-    Top = 113
-    Width = 40
-    Height = 15
-    Caption = 'Label13'
-  end
   object Label14: TLabel
     Left = 414
     Top = 422
@@ -338,14 +331,30 @@ object Form2: TForm2
       end
     end
   end
-  object Button2: TButton
-    Left = 297
-    Top = 101
-    Width = 75
-    Height = 25
-    Caption = 'Button2'
+  object Panel8: TPanel
+    Left = 347
+    Top = 39
+    Width = 185
+    Height = 105
+    Caption = 'DEBUG'
     TabOrder = 1
-    OnClick = Button2Click
+    Visible = False
+    object Label13: TLabel
+      Left = 29
+      Top = 75
+      Width = 40
+      Height = 15
+      Caption = 'Label13'
+    end
+    object Button2: TButton
+      Left = 26
+      Top = 11
+      Width = 75
+      Height = 25
+      Caption = 'Button2'
+      TabOrder = 0
+      OnClick = Button2Click
+    end
   end
   object Timer1: TTimer
     Interval = 1

@@ -22,16 +22,6 @@ type
     GroupBox1: TGroupBox;
     Button2: TButton;
     Button3: TButton;
-    Button4: TButton;
-    Panel36: TPanel;
-    Label1: TLabel;
-    UpDown1: TUpDown;
-    UpDown2: TUpDown;
-    Label2: TLabel;
-    Label3: TLabel;
-    Button5: TButton;
-    Button6: TButton;
-    Label4: TLabel;
     Image1: TImage;
     Panel6: TPanel;
     Panel7: TPanel;
@@ -45,10 +35,8 @@ type
     Panel15: TPanel;
     Panel16: TPanel;
     Panel17: TPanel;
-    Button7: TButton;
     Button8: TButton;
     DP1: TPanel;
-    Button9: TButton;
     Image4: TImage;
     Image3: TImage;
     Image5: TImage;
@@ -89,17 +77,13 @@ type
     Panel28: TPanel;
     Panel29: TPanel;
     Image17: TImage;
-    Panel30: TPanel;
-    Edit1: TEdit;
     Timer2: TTimer;
     Panel31: TPanel;
-    Edit2: TEdit;
     Panel32: TPanel;
     Panel33: TPanel;
     Panel34: TPanel;
     Panel35: TPanel;
     Panel37: TPanel;
-    Edit3: TEdit;
     Panel38: TPanel;
     Image18: TImage;
     Label5: TLabel;
@@ -114,10 +98,7 @@ type
     Panel53: TPanel;
     scroller: TPanel;
     Panel41: TPanel;
-    Panel42: TPanel;
-    Label7: TLabel;
-    Label8: TLabel;
-    Button22: TButton;
+    Button23: TButton;
     procedure Timer1Timer(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -125,14 +106,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
-    procedure UpDown1Click(Sender: TObject; Button: TUDBtnType);
-    procedure UpDown2Click(Sender: TObject; Button: TUDBtnType);
-    procedure Button5Click(Sender: TObject);
-
-    procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
-    procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
@@ -146,12 +120,6 @@ type
     procedure Button20Click(Sender: TObject);
     procedure Button21Click(Sender: TObject);
     procedure Button23Click(Sender: TObject);
-    procedure Button24Click(Sender: TObject);
-    procedure Button25Click(Sender: TObject);
-    procedure Button26Click(Sender: TObject);
-    procedure Button27Click(Sender: TObject);
-    procedure Button28Click(Sender: TObject);
-    procedure Button29Click(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure Panel25Click(Sender: TObject);
     procedure Panel26Click(Sender: TObject);
@@ -161,7 +129,6 @@ type
     procedure Image14Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
     procedure Image12Click(Sender: TObject);
-    procedure Timer2Timer(Sender: TObject);
     procedure Image13Click(Sender: TObject);
     procedure Image15Click(Sender: TObject);
     procedure Image16Click(Sender: TObject);
@@ -175,12 +142,8 @@ type
     procedure Label10Click(Sender: TObject);
     procedure Label11Click(Sender: TObject);
     procedure Label12Click(Sender: TObject);
-    procedure Panel41Click(Sender: TObject);
-    procedure Panel42Click(Sender: TObject);
     procedure Button22Click(Sender: TObject);
-    procedure Label4Click(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
-//    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 
   private
     KeyWPressed: Boolean;
@@ -191,8 +154,6 @@ type
     KeyShiftPressed: Boolean;
     KeySpacePressed: Boolean;
      KeyEscPressed: Boolean;
-
-
 
   public
     procedure UpdatePlayerImage;
@@ -205,13 +166,11 @@ var
   movepanelsCount: integer;
 
   NewTopCam: Integer;
-  CheckCollisionDebug:Boolean;
   Form1: TForm1;
   NewCam: Boolean;
   PlayerPic: Timage;
   Speed: Integer;
   Movement: Boolean;
-  RestartCount: Boolean;
   Panels: Tarray<Tpanel>;
   MovePanels: Tarray<Tpanel>;
   MoveImages: TArray<TImage>;
@@ -225,8 +184,6 @@ var
   LastSpaceTime: TDateTime;
   Speeddef: integer;
   Speedmod: integer;
-  MovementOnOffIndicator: String;
-  CheckCollisionDebugIndicator: String;
   Truecod, gavocod:string;
   Inventory: array[0..4] of string;  // Статический массив на 5 элементов
   ItemCount: Integer;                // Счетчик предметов в инвентаре
@@ -236,7 +193,6 @@ var
   DoorsDialogFirstUse: boolean = true;
 
   npcCount:integer = 0;
-  spawnNewNpcTF: boolean = false;
 
 implementation
 {$MINSTACKSIZE 4194304} // Минимальный размер стека 4 МБ
@@ -288,7 +244,6 @@ begin
   if (Key = Ord('S')) or (Key = VK_DOWN) then KeySPressed := False;
   if (Key = Ord('A')) or (Key = VK_LEFT) then KeyAPressed := False;
   if (Key = Ord('D')) or (Key = VK_RIGHT) then KeyDPressed := False;
-  if Key = Ord(' ') then KeySpacePressed := False;
   if Key = Ord('E') then KeyEPressed := False;
   if Key = VK_SHIFT then KeyShiftPressed := False;
   if Key = VK_ESCAPE then KeyEscPressed := False;
@@ -303,7 +258,6 @@ begin
   Groupbox1.Top := ClientHeight div 2 - Groupbox1.Height div 2;
   Groupbox1.Left := ClientWidth div 2 - Groupbox1.Width div 2;
 
-  Panel36.Top := 0; Panel36.Left := 0;
 
   Panel18.Top := ClientHeight div 2 - Panel18.Height div 2;
   Panel18.Left := ClientWidth div 2 - Panel18.Width div 2;
@@ -401,11 +355,6 @@ end;
 
 
 
-procedure TForm1.Label4Click(Sender: TObject);
-begin
-
-end;
-
 //==============================================================================
 //==============================================================================
 //==                                                                          ==
@@ -416,12 +365,6 @@ end;
 
 
 
-//procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
-//begin
-//self.Close;
-//canclose:=true;
-//end;
-
 procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
 ExitingTheProgram(form2)
@@ -430,11 +373,7 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 
-
-
-
   ScrollBox1.VertScrollBar.Position := 0;
-
 
 
   Panels := CreatePanelArray(
@@ -459,22 +398,12 @@ begin
   [Image3,Image4,Image5,Image6,Image7,image8,image9,image10];
 
 
-
-
-
-  RestartCount := True;// НЕ МЕНЯТЬ
-  LastSpaceTime := 0;  // Изначально не было нажатия
-  CheckCollisionDebug := True;
-
-
-
   Speeddef := 1;
   Speedmod := 2;
   truecod := '19840';
   Movement := True;
   Self.DoubleBuffered := True;
   Panel1.BringToFront;
-  Panel36.BringToFront;
   label6.BringToFront;
   label5.BringToFront;
   panel39.BringToFront;
@@ -488,7 +417,6 @@ begin
 
   GroupBox1.Visible := False;
   PlayerPic := Image4;
-  Panel36.Visible := False;
   PlayerPic.Visible := True;
   panel18.Visible := False;
   Form1.Constraints.MinWidth := 400;
@@ -518,10 +446,6 @@ begin
       for var ii in images do
       ii.BringToFront;
 
-
-
-
-
 end;
 
 function Tform1.CreatePanelArray(const Panels: array of TPanel): TArray<Tpanel>;
@@ -547,17 +471,7 @@ procedure TForm1.Timer1Timer(Sender: TObject);
   var
     CanMove: Boolean;
     NewLeft, NewTop: Integer;
-    ScreenCursorPos: TPoint;    //DEL
   begin
-  //DEL
-  if spawnNewNpcTF then
-    begin
-      ScreenCursorPos := Mouse.CursorPos;
-      ScreenCursorPos := form1.ScreenToClient(ScreenCursorPos);
-      panel41.Left := ScreenCursorPos.X - panel41.Width div 2;
-      panel41.Top := ScreenCursorPos.Y - panel41.Height div 2;
-    end;
-   //DEL
 
     UpdatePlayerImage();
 
@@ -577,38 +491,8 @@ procedure TForm1.Timer1Timer(Sender: TObject);
 
 
 
-
-
-
-
-
-//-------------------------------------------------             GG
-
-
     PlayerPic.Left := Panel1.Left - 35;
     PlayerPic.Top := Panel1.Top - 35;
-
-    //                                                DEBUG MENU
-     Label1.Caption := 'Speed ' + IntToStr(Speed);
-     Label2.Caption := IntToStr(Speeddef);
-     Label3.Caption := IntToStr(Speedmod);
-     Label4.Caption := 'A      = ' + BoolToStr(KeyAPressed) + #13#10 +
-                       'W     = ' + BoolToStr(KeyWPressed) + #13#10 +
-                       'S       = ' + BoolToStr(KeySPressed) + #13#10 +
-                       'D      = ' + BoolToStr(KeyDPressed) + #13#10 +
-                       'Shift = ' + BoolToStr(KeyShiftPressed);
-
-     if Movement then MovementOnOffIndicator := '[on]'
-     else MovementOnOffIndicator := '[off]';
-     Button7.Caption := 'Movement ' + MovementOnOffIndicator;
-
-     if CheckCollisionDebug then CheckCollisionDebugIndicator := '[on]'
-     else CheckCollisionDebugIndicator := '[off]';
-     Button9.Caption := 'Collision ' + CheckCollisionDebugIndicator;
-
-
-
-
 
     if KeyEPressed then                          //------E---PRESS
     begin
@@ -639,32 +523,6 @@ procedure TForm1.Timer1Timer(Sender: TObject);
 
   end;
 
-
-procedure TForm1.Timer2Timer(Sender: TObject);
-begin
-Edit1.Text := Inventory[0] +' '+ Inventory[1] +' '+ Inventory[2] +' '+ Inventory[3] +' '+ Inventory[4];
-edit2.text := inttostr(ItemCount);
-edit3.Text := inventselected;
-end;
-
-//----------------------------DEBUG SPEED DEF
-procedure TForm1.UpDown1Click(Sender: TObject; Button: TUDBtnType);
-begin
-  if Button = btNext then
-    Speeddef := Speeddef + 1
-  else
-    Speeddef := Speeddef - 1;
-
-end;
-
-//---------------------------DEBUG SPEED MOD
-procedure TForm1.UpDown2Click(Sender: TObject; Button: TUDBtnType);
-begin
-  if Button = btNext then
-    Speedmod := Speedmod + 1
-  else
-    Speedmod := Speedmod - 1;
-end;
 
 //----------------------------------------------------------CODE
 procedure TForm1.Button10Click(Sender: TObject);
@@ -746,7 +604,6 @@ procedure TForm1.Button1Click(Sender: TObject);//--------------ENTER
     Image2.Visible := False;
     GroupBox1.Visible := False;
     Movement := True;
-
   end;
 
 
@@ -789,68 +646,22 @@ end;
 
 procedure TForm1.Button23Click(Sender: TObject);
 begin
-ActiveControl:=nil;
-end;
-
-procedure TForm1.Button24Click(Sender: TObject);
-begin
-ActiveControl:=nil;
-end;
-
-procedure TForm1.Button25Click(Sender: TObject);
-begin
-ActiveControl:=nil;
-end;
-
-procedure TForm1.Button26Click(Sender: TObject);
-begin
-ActiveControl:=nil;
-end;
-
-procedure TForm1.Button27Click(Sender: TObject);
-begin
-ActiveControl:=nil;
-end;
-
-procedure TForm1.Button28Click(Sender: TObject);
-begin
-ActiveControl:=nil;
-end;
-
-procedure TForm1.Button29Click(Sender: TObject);
-begin
+swichWindow(form2);
 ActiveControl:=nil;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);//---------------exit
 begin
   Form2.Close;
-//  form1.Close;
-  //Close;
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);
+procedure TForm1.Button3Click(Sender: TObject);   // settings button
 begin
   TakeMeBackForSettings := form1;
   swichWindow(form6);
   ActiveControl:=nil;
 end;
 
-
-procedure TForm1.Button4Click(Sender: TObject);//---------------------debug
-begin
-  ActiveControl:=nil;
-  if Button4.Caption = 'Debug [off]' then
-  begin
-    Button4.Caption := 'Debug [on]';
-    Panel36.Visible := True;
-  end
-  else
-  begin
-    Button4.Caption := 'Debug [off]';
-    Panel36.Visible := False;
-  end;
-end;
 
 //-----------------------------------------------PLAYER IMAGES
 procedure TForm1.UpdatePlayerImage;
@@ -948,76 +759,9 @@ begin
 end;
 
 
-
-
-//-------------------------------------------DEBUG SHOW COLLISION
-procedure TForm1.Button5Click(Sender: TObject);
-var
-  Panel: TPanel;
-begin
- ActiveControl:=nil;
- if Button5.Caption = 'Show Collisions [off]' then
- begin
-   Button5.Caption := 'Show Collisions [on]';
-    Panel1.Visible := True;
-
-   for Panel in Panels do
-   Panel.Visible := True;
-
-   for Panel in movePanels do
-   Panel.Visible := True;
-
-   for Panel in [Panel2,Panel3,Panel4,Panel5] do
-   Panel.Visible := True;
- end
- else
- begin
-   Button5.Caption := 'Show Collisions [off]';
-   for Panel in Panels do
-   Panel.Visible := False;
-
-   Panel1.Visible := False;
-
-   for Panel in movePanels do
-   Panel.Visible := False;
-
-   for Panel in [Panel2,Panel3,Panel4,Panel5] do
-   Panel.Visible := False;
- end;
-
-end;
-
-
-//--------------------------------------------------- DEBUG RESET
-
-
-
-
-procedure TForm1.Button7Click(Sender: TObject);
-begin
-ActiveControl:=nil;
- if Movement then
-    Movement := False
- else
-    Movement := True;
-end;
-
-
-
-
-
-
 procedure TForm1.Button8Click(Sender: TObject);//--------mini reset button
 begin
 ResetGame;
-end;
-
-
-procedure TForm1.Button9Click(Sender: TObject);//--------collision on/off
-begin
-ActiveControl:=nil;
-if CheckCollisionDebug then CheckCollisionDebug := False
-else CheckCollisionDebug := True;
 end;
 
 
@@ -1058,29 +802,7 @@ movement := True;
 
 end;
 
-procedure TForm1.Panel41Click(Sender: TObject);
-begin
-//if not Assigned(FindComponent('npc0')) then
-createNPC(panel41,form1,npcCount,panels,movepanelsCount);
-end;
-
-procedure TForm1.Panel42Click(Sender: TObject);
-begin
-if Panel42.Caption = 'off' then
-  begin
-    panel42.Caption := 'on';
-    spawnNewNpcTF := true;
-    panel41.Visible := true;
-  end
-  else
-  begin
-    panel42.Caption := 'off';
-    spawnNewNpcTF := false;
-    panel41.Visible := false;
-  end;
-
-end;
-
+//createNPC(panel41,form1,npcCount,panels,movepanelsCount);
 
 end.
 

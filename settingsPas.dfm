@@ -268,8 +268,8 @@ object Form6: TForm6
       Caption = #1054#1073#1097#1080#1081' '#1079#1074#1091#1082
     end
     object Label16: TLabel
-      Left = 35
-      Top = 153
+      Left = 41
+      Top = 154
       Width = 33
       Height = 15
       Caption = #1047#1074#1091#1082#1080
@@ -285,21 +285,24 @@ object Form6: TForm6
       Left = 13
       Top = 99
       Width = 407
-      Height = 21
+      Height = 27
+      Max = 100
       TabOrder = 0
     end
     object TrackBar2: TTrackBar
-      Left = 13
-      Top = 174
+      Left = 12
+      Top = 185
       Width = 407
-      Height = 21
+      Height = 27
+      Max = 100
       TabOrder = 1
     end
     object TrackBar3: TTrackBar
-      Left = 15
-      Top = 259
+      Left = 12
+      Top = 266
       Width = 407
-      Height = 21
+      Height = 27
+      Max = 100
       TabOrder = 2
     end
   end
