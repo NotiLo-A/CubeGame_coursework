@@ -84,11 +84,6 @@ type
     Panel34: TPanel;
     Panel35: TPanel;
     Panel37: TPanel;
-    Panel38: TPanel;
-    Image18: TImage;
-    Label5: TLabel;
-    Label6: TLabel;
-    Panel39: TPanel;
     Panel40: TPanel;
     ScrollBox1: TScrollBox;
     Bkk: TPanel;
@@ -132,7 +127,6 @@ type
     procedure Image13Click(Sender: TObject);
     procedure Image15Click(Sender: TObject);
     procedure Image16Click(Sender: TObject);
-    procedure Panel39Click(Sender: TObject);
     procedure Label10MouseEnter(Sender: TObject);
     procedure Label11MouseEnter(Sender: TObject);
     procedure Label12MouseEnter(Sender: TObject);
@@ -262,8 +256,6 @@ begin
   Panel18.Top := ClientHeight div 2 - Panel18.Height div 2;
   Panel18.Left := ClientWidth div 2 - Panel18.Width div 2;
 
-  Panel38.Top := ClientHeight div 2 - Panel18.Height div 2;
-  Panel38.Left := ClientWidth div 2 - Panel18.Width div 2;
 
   Panel40.Top := ClientHeight div 2 - Panel40.Height div 2;
   Panel40.Left := ClientWidth div 2 - Panel40.Width div 2;
@@ -404,9 +396,6 @@ begin
   Movement := True;
   Self.DoubleBuffered := True;
   Panel1.BringToFront;
-  label6.BringToFront;
-  label5.BringToFront;
-  panel39.BringToFront;
 
   //INVENT START
   ItemCount := 0;
@@ -498,12 +487,12 @@ procedure TForm1.Timer1Timer(Sender: TObject);
     begin
       NewTop := Panel1.Top - Speed;
       NewLeft := Panel1.Left - Speed;
-       addToInventoryGUI(panel32,image15,'kub' , newleft,newtop,panel1,invcell,moveimages,inventory,itemcount,panel38,movement,label6);
-       addToInventoryGUI(panel31,image14,'iphon12' , newleft,newtop,panel1,invcell,moveimages,inventory,itemcount,panel38,movement,label6);
-       addToInventoryGUI(panel33,image16,'malwer' , newleft,newtop,panel1,invcell,moveimages,inventory,itemcount,panel38,movement,label6);
-       addToInventoryGUI(panel34,image13,'palka' , newleft,newtop,panel1,invcell,moveimages,inventory,itemcount,panel38,movement,label6);
-       addToInventoryGUI(panel35,image12,'epomti' , newleft,newtop,panel1,invcell,moveimages,inventory,itemcount,panel38,movement,label6);
-       addToInventoryGUI(panel37,image11,'polotence' , newleft,newtop,panel1,invcell,moveimages,inventory,itemcount,panel38,movement,label6);
+       addToInventoryGUI(panel32,image15,'kub' ,panel1,invcell,moveimages,inventory,itemcount,movement,self);
+       addToInventoryGUI(panel31,image14,'iphon12' ,panel1,invcell,moveimages,inventory,itemcount,movement,self);
+       addToInventoryGUI(panel33,image16,'malwer' ,panel1,invcell,moveimages,inventory,itemcount,movement,self);
+       addToInventoryGUI(panel34,image13,'palka' ,panel1,invcell,moveimages,inventory,itemcount,movement,self);
+       addToInventoryGUI(panel35,image12,'epomti' ,panel1,invcell,moveimages,inventory,itemcount,movement,self);
+       addToInventoryGUI(panel37,image11,'polotence' ,panel1,invcell,moveimages,inventory,itemcount,movement,self);
 
       if Peresek([Panel20],panel18,panel1,movement,200) then //cod door
       atifka(form1,'Дверь','первый раз встретиться с дверью',$0062B0FF,'?');
@@ -795,12 +784,7 @@ begin
   inventselected := '';
 end;
 
-procedure TForm1.Panel39Click(Sender: TObject);
-begin
-panel38.Visible := False;
-movement := True;
 
-end;
 
 //createNPC(panel41,form1,npcCount,panels,movepanelsCount);
 

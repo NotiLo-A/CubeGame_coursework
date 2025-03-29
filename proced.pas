@@ -32,9 +32,7 @@ uses
    inv1,inv2,inv3,inv4,inv5 , outline: Tpanel);
 
 
-  function trigger(EpressObj: array of TPanel;
-    NewLeft1, NewTop1: Integer;
-    mainguy1: Tpanel): boolean;
+  function trigger(EpressObj: array of TPanel; mainguy1: Tpanel): boolean;
 
     procedure RemoveImageFromArray(var Images: TImageArray;
      ImageToRemove: TImage);
@@ -49,20 +47,17 @@ uses
   var itemCount: integer;
   var Inventory: array of string);
 
-  procedure addToInventoryGUI(useoblObj: array of TPanel;
-  upObject: Timage;
-  nameInArray: string;
-   NewLeft, NewTop: Integer;
+procedure addToInventoryGUI(useoblObj: array of TPanel;
+   upObject: Timage;
+   nameInArray: string;
    mainguy: Tpanel;
 
    invcell:array of Tpanel;
    MoveImages: TImageArray;
    var Inventory: array of string;  // Статический массив на 5 элементов
    var ItemCount: Integer;
-
-   var nah1:Tpanel;
-   var nah2:boolean;
-   var nah3:Tlabel);
+      var movement:boolean;
+      forma:Tform);
 
 
 function IsItemInInventory(
@@ -82,10 +77,13 @@ procedure DialogDoors(
 
 
 //    procedure createObjs(var Obj:  Tpanel;var objlabel: Tlabel; form: Tform; par: Tscrollbox);
+   function CreateNewPanelOrLabel(form: TForm; par: TPanel; who, text: string): TControl;
 
    function CreateRandomComponents(form:Tform; par: Tscrollbox): TArray<TControl>;
 
    procedure ResetGame;
+
+   procedure analogShowMassage(forma: TForm; mainText, postText: string);
 
    procedure atifka(form: Tform; mainText: string; postText:string; colorTab: Tcolor; Znak: string);
 
@@ -114,7 +112,7 @@ function Peresek(useoblObj: array of TPanel;
     var Panel: TPanel;
     begin
     Result := False;
-        if trigger(useoblobj,mainguy.Left,mainguy.Top,mainguy) then
+        if trigger(useoblobj,mainguy) then
         begin
           Result := True;
           if openobj.Visible = False then
@@ -136,30 +134,84 @@ function Peresek(useoblObj: array of TPanel;
 procedure addToInventoryGUI(useoblObj: array of TPanel;
    upObject: Timage;
    nameInArray: string;
-   NewLeft, NewTop: Integer;
    mainguy: Tpanel;
 
    invcell:array of Tpanel;
    MoveImages: TImageArray;
    var Inventory: array of string;  // Статический массив на 5 элементов
    var ItemCount: Integer;
-      var nah1:Tpanel;
-      var nah2:boolean;
-      var nah3:Tlabel);
+      var movement:boolean;
+      forma:Tform);
   begin
 
-  var j := 0;
-    if trigger(useoblobj,newleft,newtop,mainguy) then
+    if trigger(useoblobj,mainguy) then
       if not IsItemInInventory(nameinarray,itemcount,inventory) then
         if addToInventory(nameInArray,upObject,invcell,MoveImages) then
       begin
         AddItemToInventory(nameInArray, itemcount, Inventory);
-        nah1.Visible := True;
-        nah2 := False;
-        nah3.Caption := nameinarray;
-
+        movement := False;
+        analogShowMassage(forma, 'OOOOO', 'ььщфвовпр');
+//rt67y8uijnhbgty67y8uiojlknjhbgyu7i
       end;
   end;
+
+
+//procedure analogShowMassage(forma:Tform; mainText, postText:string);
+//var mainPanel, labelOnPanel: Tcontrol;
+//begin
+//  mainPanel := CreateNewPanelOrLabel(forma, nil, 'P');
+//  labelOnPanel := CreateNewPanelOrLabel(forma, mainPanel, 'L');
+//end;
+
+procedure analogShowMassage(forma: TForm; mainText, postText: string);
+var
+  mainPanel, labelOnPanel: TControl;
+begin
+  mainPanel := CreateNewPanelOrLabel(forma, nil, 'P', mainText);
+  labelOnPanel := CreateNewPanelOrLabel(forma, TPanel(mainPanel), 'L', postText);
+end;
+
+
+function CreateNewPanelOrLabel(form: TForm; par: TPanel; who, text: string): TControl;
+var
+  pPanel: TPanel;
+  lLabel: TLabel;
+begin
+  Result := nil; // На случай, если who не 'P' или 'L'
+
+  if who = 'P' then
+  begin
+    pPanel := TPanel.Create(form);
+    pPanel.Name := 'Panel_' + IntToStr(GetTickCount); // Более уникальное имя
+    pPanel.Parent := form;
+    pPanel.Caption := '';
+    pPanel.Width := 200;
+    pPanel.Height := 100;
+    pPanel.Left := (form.ClientWidth - pPanel.Width) div 2;
+    pPanel.Top := (form.ClientHeight - pPanel.Height) div 2;
+    pPanel.Visible := True;
+    Result := pPanel;
+  end
+  else if who = 'L' then
+  begin
+    if par = nil then Exit; // Защита от ошибки, если par не передан
+
+    lLabel := TLabel.Create(form);
+    lLabel.Name := 'Label_' + IntToStr(GetTickCount);
+    lLabel.Parent := par;
+    lLabel.Caption := text;
+    lLabel.Align := alClient; // Автоматическое выравнивание внутри панели
+    lLabel.Alignment := taCenter; // Текст по центру
+    lLabel.Layout := tlCenter;
+    lLabel.Visible := True;
+    Result := lLabel;
+  end;
+end;
+
+
+
+
+
 
 function IsItemInInventory(ItemName: string; itemcount:integer;inventory:array of string): Boolean;
 var
@@ -244,19 +296,20 @@ procedure RemoveImageFromArray(var Images: TImageArray; ImageToRemove: TImage);
   end;
 
 
-function trigger(EpressObj: array of TPanel;
-   NewLeft1, NewTop1: Integer;
-   mainguy1: Tpanel): boolean;
-    begin
-    result := False;
-      for var Panel in EpressObj do
-        if (NewLeft1 + mainguy1.Width > Panel.Left) and (NewLeft1 < Panel.Left + Panel.Width) and
-        (NewTop1 + mainguy1.Height > Panel.Top) and (NewTop1 < Panel.Top + Panel.Height) then
-        begin
-          result := True;
-        exit;
-        end;
-    end;
+function trigger(EpressObj: array of TPanel; mainguy1: Tpanel): boolean;
+  begin
+    Result := False;
+    for var Panel in EpressObj do
+      if (mainguy1.Left + mainguy1.Width > Panel.Left) and
+         (mainguy1.Left < Panel.Left + Panel.Width) and
+         (mainguy1.Top + mainguy1.Height > Panel.Top) and
+         (mainguy1.Top < Panel.Top + Panel.Height) then
+      begin
+        Result := True;
+        Exit;
+      end;
+  end;
+
 
 procedure AdjustPanelToLabel(
 //   APanel: TPanel;                         // рамка
@@ -403,8 +456,27 @@ procedure DialogDoors(
   end;
 
 
-
-
+//function CreateNewPanelOrLabel(form:Tform; par: Tpanel; who: string): TControl;
+//var
+//  pPanel: TPanel;
+//  lLabel: TLabel;
+//begin
+//  if who = 'P' then
+//  begin
+//    pPanel := TPanel.Create(form);
+//    pPanel.Name := 'Panel' + IntToStr(Random(999888777666));
+//    pPanel.Parent := form;
+//    Result := pPanel;
+//  end;
+//
+//  if who = 'L' then
+//  begin
+//    LLabel := TLabel.Create(form);
+//    LLabel.Name := 'Label' + IntToStr(Random(999888777666));
+//    LLabel.Parent := par;
+//    Result := Llabel;
+//  end;
+//end;
 
 
 function CreateRandomComponents(form:Tform; par: Tscrollbox): TArray<TControl>;
